@@ -49,7 +49,7 @@ public class UserDao extends BaseDao{
 	
 	public List<User> getAllUsers() {
 		List<User> userList=new ArrayList<User>();
-		int result=0;
+		
 		try {
 			openConnection();
 			Statement stmt=connection.createStatement();
@@ -69,8 +69,9 @@ public class UserDao extends BaseDao{
 		}finally {
 			closeConnection();
 		}
+		
 		return userList;
 	}
 	
-    
+   
 }

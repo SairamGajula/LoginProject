@@ -16,6 +16,7 @@ import com.database.UserDao;
 
 public class GetUserServlet extends GenericServlet {
 
+	
 	@Override
 	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		
