@@ -4,6 +4,8 @@ package com.database;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDao extends BaseDao{
 	
@@ -44,5 +46,31 @@ public class UserDao extends BaseDao{
 		
 		return count;
 	}
+	
+	public List<User> getAllUsers() {
+		List<User> userList=new ArrayList<User>();
+		int result=0;
+		try {
+			openConnection();
+			Statement stmt=connection.createStatement();
+			String sqlQuery="SELECT * FROM Users";
+			ResultSet rset=stmt.executeQuery(sqlQuery);
+			
+			while(rset.next()) {
+				User user=new User();
+				user.setUserID(rset.getString("UserID"));
+				user.setUserName(rset.getString("UserNmae"));
+				user.setPassword(rset.getString("PassWord"));
+				user.setEmail(rset.getString("Email"));
+				userList.add(user);
+			}
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}finally {
+			closeConnection();
+		}
+		return userList;
+	}
+	
     
 }
