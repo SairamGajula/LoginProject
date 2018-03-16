@@ -17,10 +17,8 @@ public class LoginServlet extends GenericServlet {
 		System.out.println("Login Servlet is Called...");
 		String usrname=request.getParameter("uname");
 		String pwd=request.getParameter("pwd");
-		System.out.println("UserName ::"+usrname);
-		System.out.println("Password ::"+pwd);
-		
-		
+	
+			
 		try{
 	
 			UserDao userDao=new UserDao();

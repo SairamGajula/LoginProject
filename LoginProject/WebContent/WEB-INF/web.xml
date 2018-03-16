@@ -15,6 +15,15 @@
   <url-pattern>/register</url-pattern>
   
   </servlet-mapping>
+  <servlet>
+  <servlet-name>loginUser</servlet-name>
+  <servlet-class>com.servlet.user.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>loginUser</servlet-name>
+  <url-pattern>/userLogin</url-pattern>
+  </servlet-mapping>
   
   <servlet>
   <servlet-name>allUsers</servlet-name>
