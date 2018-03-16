@@ -22,7 +22,7 @@
   
   <servlet-mapping>
   <servlet-name>loginUser</servlet-name>
-  <url-pattern>/userLogin</url-pattern>
+  <url-pattern>/login</url-pattern>
   </servlet-mapping>
   
   <servlet>

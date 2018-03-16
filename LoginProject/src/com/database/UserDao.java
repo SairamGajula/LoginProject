@@ -36,7 +36,13 @@ public class UserDao extends BaseDao{
 			
 			ResultSet rset=stmt.executeQuery(sqlQuery);
 			
-			count=stmt.executeUpdate(sqlQuery);
+			//count=stmt.executeUpdate(sqlQuery);
+			
+			if(rset.next()) {
+				count=rset.getInt(1);
+			}else {
+				count=0;
+			}
 			
 		}catch(Exception ex){
 			ex.printStackTrace();
